@@ -8,12 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak private var questionLabel: UILabel!
+    @IBOutlet weak private var questionSlider: UISlider!
+    @IBOutlet weak private var resultButton: UIButton!
 
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var questionSlider: UISlider!
-    @IBOutlet weak var resultButton: UIButton!
-
-    private var randomNum = arc4random_uniform(100)
+    private var randomNum = Int.random(in: 1...100)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,27 +23,25 @@ class ViewController: UIViewController {
         resultButton.layer.cornerRadius = 20
     }
 
-    @IBAction func resultButtonDidTapped(_ sender: Any) {
+    @IBAction private func resultButtonDidTapped(_ sender: Any) {
         let selectSliderNum = Int(questionSlider.value * 100)
         showResultAlert(selectSliderNum: selectSliderNum)
     }
 
-    private func showResultAlert(selectSliderNum:Int){
-
-        if randomNum == selectSliderNum{
+    private func showResultAlert(selectSliderNum: Int) {
+        if randomNum == selectSliderNum {
             alert(message: "あたり！ + \n あなたの値: \(selectSliderNum)")
-        }else{
+        } else {
             alert(message: "はずれ！ + \n あなたの値:\(selectSliderNum)")
         }
-        randomNum = arc4random_uniform(100)
+        randomNum = Int.random(in: 1...100)
         questionLabel.text = String(randomNum)
     }
 
-    private func alert(message:String){
+    private func alert(message: String) {
         let alertController = UIAlertController(title: "結果", message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "再挑戦", style: .default)
         alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
     }
 }
-
