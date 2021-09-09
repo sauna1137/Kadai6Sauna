@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1p-T3-Fzd">
-                                <rect key="frame" x="161" y="307" width="93" height="53"/>
+                                <rect key="frame" x="160" y="307" width="93" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cyan="0.12239583330000001" magenta="0.0" yellow="0.0" black="0.0" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
@@ -60,9 +60,11 @@
                         <color key="backgroundColor" cyan="0.0" magenta="0.22172619047619047" yellow="0.0" black="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="lowerLabel" destination="cPu-2x-paN" id="4Pc-8m-m9U"/>
                         <outlet property="questionLabel" destination="2dy-fq-L7v" id="GpS-IU-46G"/>
                         <outlet property="questionSlider" destination="1of-T0-R0l" id="bfc-lB-Zjb"/>
                         <outlet property="resultButton" destination="F1p-T3-Fzd" id="yqi-Pp-dPV"/>
+                        <outlet property="upperLabel" destination="LFP-ah-r9t" id="gDw-CN-9Lx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
